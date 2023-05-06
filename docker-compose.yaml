@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.3-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: route_rider
+
+
+volumes:
+  postgres:
+    external: false
